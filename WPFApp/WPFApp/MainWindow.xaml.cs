@@ -39,8 +39,7 @@ namespace WPFApp
             {
                 try
                 {
-                    MessageBox.Show(_fileDialogObj.FileName);
-
+                    pathOfXmlFile.Text = _fileDialogObj.FileName;
                 }
                 catch (Exception ex)
                 {
