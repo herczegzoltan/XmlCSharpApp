@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,29 @@ namespace WPFApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            OpenFileDialog _fileDialogObj = new OpenFileDialog();
+            _fileDialogObj.Title = "Open XML File";
+            _fileDialogObj.Filter = "XML files|*.xml";
+            _fileDialogObj.InitialDirectory = @"C:\";
+            Nullable<bool> resultOfDialog = _fileDialogObj.ShowDialog();
+            if (resultOfDialog == true)
+            {
+                try
+                {
+                    MessageBox.Show(_fileDialogObj.FileName);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Exception: {ex.Message}\n\n" +
+                    $"Details:\n\n{ex.StackTrace}");
+                }
+            }
         }
     }
 }
