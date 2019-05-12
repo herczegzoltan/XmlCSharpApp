@@ -12,7 +12,6 @@ namespace WPFApp.Helpers
     {
         public static WPFApp.WebOrder LoadXml(string path)
         {
-
             XmlSerializer serializer = new XmlSerializer(typeof(WebOrder));
 
             using (FileStream fileStream = new FileStream(@"" + path, FileMode.Open))
@@ -20,10 +19,7 @@ namespace WPFApp.Helpers
                 WebOrder result = (WebOrder)serializer.Deserialize(fileStream);
 
                 return result;
-
-              
             }
-
         }
     }
 }

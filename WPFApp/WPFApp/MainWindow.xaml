@@ -58,11 +58,11 @@
                     <Label Content="Price Average"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5"  Grid.Column="1"/>
                     <Label Content="Total"          HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="6"  Grid.Column="1"/>
 
-                    <TextBlock Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2"  Grid.Column="2"/>
-                    <TextBlock Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3"  Grid.Column="2"/>
-                    <TextBlock Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4"  Grid.Column="2"/>
-                    <TextBlock Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5"  Grid.Column="2"/>
-                    <TextBlock Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="6"  Grid.Column="2"/>
+                    <TextBlock x:Name="idResultTextBlock"           Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2"  Grid.Column="2"/>
+                    <TextBlock x:Name="customerResultTextBlock"     Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3"  Grid.Column="2"/>
+                    <TextBlock x:Name="dateResultTextBlock"         Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4"  Grid.Column="2"/>
+                    <TextBlock x:Name="priceAverageResultTextBlock" Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5"  Grid.Column="2"/>
+                    <TextBlock x:Name="totalResultTextBlock"        Text="-" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="6"  Grid.Column="2"/>
                 </Grid>
             </GroupBox>
         </Grid>
