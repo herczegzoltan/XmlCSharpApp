@@ -32,19 +32,16 @@ namespace WPFApp
         {
             InitializeComponent();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Call_Dialog_Button_Click(object sender, RoutedEventArgs e)
         {
             pathOfXmlFile.Text = Helpers.XmlSelector.getSelectedXmlPath();
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Xml_Process_Button_Click(object sender, RoutedEventArgs e)
         {
             double sumTotalPrice = 0;
             double sumTotalPriceWithQuantity = 0;
             int counterItems = 0;
-
             double priceAverageValue    = 0;
-            int quantityValue    = 0;
 
             var xmlData = XmlProcessor.LoadXml(pathOfXmlFile.Text);
 
@@ -52,22 +49,15 @@ namespace WPFApp
             {
                 foreach (var i in item.Item)
                 {
-                    //tempPriceValue = Convert.ToDouble(s);
-                    //MessageBox.Show("|"+i.Price.ToString()+"|");
-                    sumTotalPrice = sumTotalPrice + Convert.ToDouble(i.Price.Replace(".",","));// Double.Parse(i.Price);  
+                    sumTotalPrice = sumTotalPrice + Convert.ToDouble(i.Price.Replace(".",","));
                     sumTotalPriceWithQuantity = sumTotalPriceWithQuantity + Convert.ToDouble(i.Price.Replace(".", ",")) * Convert.ToInt16(i.Quantity);  
                     counterItems++;
                 }
             }
 
-            priceAverageValue = sumTotalPrice / counterItems +1000;
+            priceAverageValue = sumTotalPrice / counterItems;
 
-
-            CultureInfo culture = CultureInfo.CreateSpecificCulture("de-DE");
-
-            displayValues(xmlData.Id.ToString(),xmlData.Customer,xmlData.Date, priceAverageValue.ToString("N3", culture), sumTotalPriceWithQuantity.ToString("N3", culture));
-
-
+            displayValues(xmlData.Id.ToString(),xmlData.Customer, convertDate(xmlData.Date), convertDoubleToSeparatedDouble(priceAverageValue) , convertDoubleToSeparatedDouble(sumTotalPriceWithQuantity));
         }
         public void displayValues(string id, string customer, string date, string priceAverage, string total)
         {
@@ -76,6 +66,19 @@ namespace WPFApp
             dateResultTextBlock.Text         = date;
             priceAverageResultTextBlock.Text = priceAverage;
             totalResultTextBlock.Text        = total;
+        }
+        public string convertDate(string date)
+        {
+            string resultDate = DateTime.ParseExact(date, "yyyyMMdd", CultureInfo.InvariantCulture).ToString("dd.MM.yyyy");
+
+            return resultDate;
+        }
+        public string convertDoubleToSeparatedDouble(double value)
+        {
+
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("de-DE");
+            
+            return value.ToString("N3", culture);
         }
     }
 }
