@@ -14,6 +14,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using System.Xml.Serialization;
+using WPFApp.Helpers;
+
 
 namespace WPFApp
 {
@@ -27,31 +31,37 @@ namespace WPFApp
             InitializeComponent();
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            OpenFileDialog _fileDialogObj = new OpenFileDialog();
-            _fileDialogObj.Title = "Open XML File";
-            _fileDialogObj.Filter = "XML files|*.xml";
-            _fileDialogObj.InitialDirectory = @"C:\";
-            Nullable<bool> resultOfDialog = _fileDialogObj.ShowDialog();
-            if (resultOfDialog == true)
-            {
-                try
-                {
-                    pathOfXmlFile.Text = _fileDialogObj.FileName;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Exception: {ex.Message}\n\n" +
-                    $"Details:\n\n{ex.StackTrace}");
-                }
-            }
+            pathOfXmlFile.Text = Helpers.XmlSelector.getSelectedXmlPath();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
+
+            var xmlData = XmlProcessor.LoadXml(pathOfXmlFile.Text);
+
+            MessageBox.Show(xmlData.Customer);
+            //XmlSerializer serializer = new XmlSerializer(typeof(WebOrder));
+
+            //using (FileStream fileStream = new FileStream(@""+ pathOfXmlFile.Text, FileMode.Open))
+            //{
+            //    WebOrder result = (WebOrder)serializer.Deserialize(fileStream);
+            //    foreach (var item in result.Items)
+            //    {
+            //        foreach (var item2 in item.Item)
+            //        {
+            //            MessageBox.Show(item2.Quantity);
+            //        }
+            //    }
+            //}
+        }
+        public static void displayValues(string id, string customer, string date, string priceAverage, string total)
+        {
+
         }
     }
+   
 }
