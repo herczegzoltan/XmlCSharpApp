@@ -27,3 +27,4 @@ C:\Projects\GitRepo\XmlCSharpApp\WPFApp\WPFApp\bin\Debug\MaterialDesignThemes.Wp
 C:\Projects\GitRepo\XmlCSharpApp\WPFApp\WPFApp\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Projects\GitRepo\XmlCSharpApp\WPFApp\WPFApp\obj\Debug\App.baml
 C:\Projects\GitRepo\XmlCSharpApp\WPFApp\WPFApp\obj\Debug\WPFApp.csproj.CopyComplete
+C:\Projects\GitRepo\XmlCSharpApp\WPFApp\WPFApp\obj\Debug\WPFApp.csprojAssemblyReference.cache

@@ -32,9 +32,9 @@ namespace WPFApp
         {
             InitializeComponent();
         }
-        private void Call_Dialog_Button_Click(object sender, RoutedEventArgs e)
+        private void Open_Dialog_Button_Click(object sender, RoutedEventArgs e)
         {
-            pathOfXmlFile.Text = Helpers.XmlSelector.getSelectedXmlPath();
+            pathOfXmlFileTextBlock.Text = Helpers.XmlSelector.getSelectedXmlPath();
         }
         private void Xml_Process_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -43,8 +43,8 @@ namespace WPFApp
             int counterItems = 0;
             double priceAverageValue    = 0;
 
-            var xmlData = XmlProcessor.LoadXml(pathOfXmlFile.Text);
-
+            var xmlData = XmlProcessor.LoadXml(pathOfXmlFileTextBlock.Text);
+            
             foreach (var item in xmlData.Items)
             {
                 foreach (var i in item.Item)
@@ -70,14 +70,11 @@ namespace WPFApp
         public string convertDate(string date)
         {
             string resultDate = DateTime.ParseExact(date, "yyyyMMdd", CultureInfo.InvariantCulture).ToString("dd.MM.yyyy");
-
             return resultDate;
         }
         public string convertDoubleToSeparatedDouble(double value)
         {
-
             CultureInfo culture = CultureInfo.CreateSpecificCulture("de-DE");
-            
             return value.ToString("N3", culture);
         }
     }

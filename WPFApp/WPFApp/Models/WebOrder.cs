@@ -13,7 +13,7 @@ namespace WPFApp
     {
 
         [XmlAttribute("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [XmlElement("Customer")]
         public string Customer { get; set; }

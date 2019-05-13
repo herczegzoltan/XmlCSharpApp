@@ -27,10 +27,10 @@
                 <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Input XML"       HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"    Grid.Row="1"  Grid.Column="1" FontWeight = "Bold"/>
-            <TextBox   x:Name="pathOfXmlFile" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"    Grid.Row="1"  Grid.Column="2" IsReadOnly="True"/>
-            <Button    Content="..."          HorizontalAlignment="Center" VerticalAlignment="Center" Click="Call_Dialog_Button_Click"   Grid.Row="1"  Grid.Column="4"/>
-            <Button    Content="Process"      HorizontalAlignment="Center" VerticalAlignment="Center" Click="Xml_Process_Button_Click" Grid.Row="1"  Grid.Column="5"/>
+            <TextBlock Text="Input XML"                HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"    Grid.Row="1"  Grid.Column="1" FontWeight = "Bold"/>
+            <TextBox   x:Name="pathOfXmlFileTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"    Grid.Row="1"  Grid.Column="2" IsReadOnly="True"/>
+            <Button    Content="..."                   HorizontalAlignment="Center" VerticalAlignment="Center" Click="Open_Dialog_Button_Click"   Grid.Row="1"  Grid.Column="4"/>
+            <Button    Content="Process"               HorizontalAlignment="Center" VerticalAlignment="Center" Click="Xml_Process_Button_Click" Grid.Row="1"  Grid.Column="5"/>
 
             <GroupBox Header="Result" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row = "3"   Grid.Column = "1" Grid.ColumnSpan ="10" Grid.RowSpan="2" Width="520" >
                 <Grid>

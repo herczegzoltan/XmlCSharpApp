@@ -11,9 +11,7 @@ namespace WPFApp
 
     public class Items
     {
-
         [XmlElement("Item")]
         public List<Item> Item { get; set; }
-
     }
 }

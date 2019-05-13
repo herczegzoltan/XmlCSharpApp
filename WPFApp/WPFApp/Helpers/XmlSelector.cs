@@ -15,8 +15,7 @@ namespace WPFApp.Helpers
             OpenFileDialog _fileDialogObj = new OpenFileDialog();
             _fileDialogObj.Title = "Open XML File";
             _fileDialogObj.Filter = "XML files|*.xml";
-            _fileDialogObj.InitialDirectory = @"C:\Projects\GitRepo\XmlCSharpApp";
-            //_fileDialogObj.InitialDirectory = @"C:\";
+            _fileDialogObj.InitialDirectory = @"C:\";
             Nullable<bool> resultOfDialog = _fileDialogObj.ShowDialog();
             if (resultOfDialog == true)
             {

@@ -16,10 +16,8 @@ namespace WPFApp
         [XmlAttribute("description")]
         public string Description { get; set; }
 
-
         [XmlElement("Quantity")]
         public string Quantity { get; set; }
-
 
         [XmlElement("Price")]
         public string Price { get; set; }
